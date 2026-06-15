@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: OW Google Reviews
- * Plugin URI:  https://orangewidow.com
+ * Plugin URI:  https://github.com/beardied/ow-google-reviews
  * Description: Sync Google Business reviews to a local database and display them via Gutenberg blocks.
  * Version:     1.0.0
  * Author:      OrangeWidow
