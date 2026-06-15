@@ -1,0 +1,34 @@
+{
+	"apiVersion": 3,
+	"name": "ow-google-reviews/recent-reviews",
+	"title": "Recent Google Reviews",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Display a configurable number of recent Google reviews.",
+	"keywords": ["google", "reviews", "testimonials"],
+	"textdomain": "ow-google-reviews",
+	"attributes": {
+		"count": {
+			"type": "number",
+			"default": 3
+		},
+		"showViewAllButton": {
+			"type": "boolean",
+			"default": false
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "View all reviews"
+		}
+	},
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false
+	},
+	"editorScript": "owgr-recent-reviews-editor",
+	"editorStyle": "file:./recent-reviews.css"
+}

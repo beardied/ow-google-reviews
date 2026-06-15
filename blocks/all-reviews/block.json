@@ -1,0 +1,16 @@
+{
+	"apiVersion": 3,
+	"name": "ow-google-reviews/all-reviews",
+	"title": "All Google Reviews",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Display all stored Google reviews.",
+	"keywords": ["google", "reviews", "testimonials"],
+	"textdomain": "ow-google-reviews",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false
+	},
+	"editorScript": "owgr-all-reviews-editor",
+	"editorStyle": "file:./all-reviews.css"
+}

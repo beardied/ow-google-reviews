@@ -1,0 +1,70 @@
+.owgr-admin-wrap {
+	max-width: 900px;
+}
+
+.owgr-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.owgr-card h2 {
+	margin-top: 0;
+}
+
+.owgr-steps {
+	margin-left: 1.2em;
+}
+
+.owgr-steps li {
+	margin-bottom: 0.75em;
+}
+
+.owgr-field {
+	margin: 1em 0;
+}
+
+.owgr-field label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.25em;
+}
+
+.owgr-status {
+	padding: 8px 12px;
+	border-radius: 4px;
+}
+
+.owgr-status--success {
+	background: #edfaef;
+	border-left: 4px solid #00a32a;
+}
+
+#owgr-accounts-wrap,
+#owgr-locations-wrap {
+	margin: 1em 0;
+}
+
+#owgr-accounts-wrap label,
+#owgr-locations-wrap label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.25em;
+}
+
+#owgr-account-select,
+#owgr-location-select {
+	min-width: 300px;
+}
+
+.owgr-button--danger {
+	color: #b32d2e;
+	border-color: #b32d2e;
+}
+
+.owgr-button--danger:hover {
+	background: #b32d2e;
+	color: #fff;
+}

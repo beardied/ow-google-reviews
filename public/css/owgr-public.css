@@ -1,0 +1,128 @@
+.owgr-reviews {
+	--owgr-star-color: #fbbc04;
+	--owgr-star-empty: #dadce0;
+	--owgr-text-color: #202124;
+	--owgr-meta-color: #5f6368;
+	--owgr-border-color: #dadce0;
+	--owgr-avatar-bg: #e8eaed;
+	--owgr-button-bg: #1a73e8;
+	--owgr-button-text: #fff;
+
+	font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+	color: var(--owgr-text-color);
+}
+
+.owgr-review-card {
+	border-bottom: 1px solid var(--owgr-border-color);
+	padding: 20px 0;
+}
+
+.owgr-review-card:last-child {
+	border-bottom: none;
+}
+
+.owgr-review-header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.owgr-review-avatar {
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	background: var(--owgr-avatar-bg);
+}
+
+.owgr-review-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.owgr-avatar-initial {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--owgr-meta-color);
+}
+
+.owgr-review-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.owgr-review-name {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.owgr-review-rating {
+	display: flex;
+	gap: 2px;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.owgr-star--empty {
+	color: var(--owgr-star-empty);
+}
+
+.owgr-star--filled {
+	color: var(--owgr-star-color);
+}
+
+.owgr-review-date {
+	font-size: 12px;
+	color: var(--owgr-meta-color);
+}
+
+.owgr-review-body {
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--owgr-text-color);
+}
+
+.owgr-review-body p {
+	margin: 0 0 12px;
+}
+
+.owgr-review-body p:last-child {
+	margin-bottom: 0;
+}
+
+.owgr-view-all {
+	margin-top: 20px;
+}
+
+.owgr-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background: var(--owgr-button-bg);
+	color: var(--owgr-button-text);
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	transition: background 0.2s ease;
+}
+
+.owgr-button:hover,
+.owgr-button:focus {
+	background: #1557b0;
+	color: var(--owgr-button-text);
+}
+
+.owgr-no-reviews {
+	font-size: 14px;
+	color: var(--owgr-meta-color);
+}
