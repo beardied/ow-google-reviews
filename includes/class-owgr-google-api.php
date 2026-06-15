@@ -259,7 +259,11 @@ class OWGR_Google_API {
 
 		$data = $this->parse_json_response( $response );
 		if ( is_wp_error( $data ) ) {
-			return $data;
+			$message = $data->get_error_message();
+			if ( false !== strpos( strtolower( $message ), 'expired' ) || false !== strpos( strtolower( $message ), 'revoked' ) ) {
+				$message .= ' ' . __( 'This usually means the 7-day Testing-mode refresh token has expired. Click "Connect Google Account" again to generate a new token.', 'ow-google-reviews' );
+			}
+			return new WP_Error( $data->get_error_code(), $message, $data->get_error_data() );
 		}
 
 		$access_token = sanitize_text_field( $data['access_token'] );

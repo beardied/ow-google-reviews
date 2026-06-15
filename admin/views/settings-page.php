@@ -16,25 +16,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="owgr-card">
 		<h2><?php esc_html_e( 'Setup Guide', 'ow-google-reviews' ); ?></h2>
+
+		<div class="owgr-notice owgr-notice--warning">
+			<p>
+				<strong><?php esc_html_e( 'Testing mode limitation', 'ow-google-reviews' ); ?></strong>
+			</p>
+			<p>
+				<?php esc_html_e( 'This plugin uses an OAuth project in Google Cloud Testing mode. Google issues refresh tokens that expire after 7 days in Testing mode, so you will need to click "Connect Google Account" again roughly once a week. This is a temporary workaround until you move the project to Production and complete Google verification.', 'ow-google-reviews' ); ?>
+			</p>
+		</div>
+
 		<ol class="owgr-steps">
 			<li>
 				<?php esc_html_e( 'Create a project in the', 'ow-google-reviews' ); ?>
 				<a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google Cloud Console', 'ow-google-reviews' ); ?></a>.
 			</li>
 			<li>
-				<?php esc_html_e( 'Enable these APIs:', 'ow-google-reviews' ); ?>
-				<ul>
-					<li><?php esc_html_e( 'Google My Business API', 'ow-google-reviews' ); ?></li>
-					<li><?php esc_html_e( 'Business Profile Management API', 'ow-google-reviews' ); ?></li>
-					<li><?php esc_html_e( 'Business Information API', 'ow-google-reviews' ); ?></li>
-				</ul>
+				<?php esc_html_e( 'Enable the', 'ow-google-reviews' ); ?>
+				<strong><?php esc_html_e( 'Google My Business API', 'ow-google-reviews' ); ?></strong>.
+				<?php esc_html_e( 'If you cannot find it by name, enable it directly at', 'ow-google-reviews' ); ?>
+				<a href="https://console.cloud.google.com/apis/library/mybusiness.googleapis.com" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/apis/library/mybusiness.googleapis.com</a>.
 			</li>
 			<li>
-				<?php esc_html_e( 'Configure the OAuth consent screen as External. Add your own Google account email as a Test User. Add the scope:', 'ow-google-reviews' ); ?>
-				<code>https://www.googleapis.com/auth/business.manage</code>
+				<?php esc_html_e( 'Go to APIs & Services &rarr; OAuth consent screen. Choose', 'ow-google-reviews' ); ?>
+				<strong><?php esc_html_e( 'External', 'ow-google-reviews' ); ?></strong>
+				<?php esc_html_e( 'and leave the project in', 'ow-google-reviews' ); ?>
+				<strong><?php esc_html_e( 'Testing', 'ow-google-reviews' ); ?></strong>.
+				<?php esc_html_e( 'Add your own Google account email as a', 'ow-google-reviews' ); ?>
+				<strong><?php esc_html_e( 'Test User', 'ow-google-reviews' ); ?></strong>.
 			</li>
 			<li>
-				<?php esc_html_e( 'Go to Credentials &rarr; Create Credentials &rarr; OAuth Client ID &rarr; Web Application. Paste the Authorized Redirect URI below, then paste the Client ID and Client Secret into the fields below.', 'ow-google-reviews' ); ?>
+				<?php esc_html_e( 'Go to Credentials &rarr; Create Credentials &rarr; OAuth Client ID &rarr; Web Application. Paste the Authorized Redirect URI below into the redirect box.', 'ow-google-reviews' ); ?>
+			</li>
+			<li>
+				<?php esc_html_e( 'Paste the Client ID and Client Secret into the fields below, save, then click Connect Google Account.', 'ow-google-reviews' ); ?>
 			</li>
 		</ol>
 

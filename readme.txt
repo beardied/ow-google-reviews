@@ -32,6 +32,8 @@ OW Google Reviews connects each website to its own Google Cloud project via OAut
 4. Follow the setup guide to create a Google Cloud project, enable the required APIs, and paste your OAuth credentials.
 5. Connect your Google account, select your Business Profile account/location, and sync.
 
+Note: This plugin is designed to work with a Google Cloud project in OAuth Testing mode. Google issues refresh tokens that expire after 7 days while in Testing mode, so you will need to reconnect your Google account roughly once a week. For a permanent solution, move the project to Production and complete Google's verification process.
+
 == Frequently Asked Questions ==
 
 = Why do I need my own Google Cloud project? =

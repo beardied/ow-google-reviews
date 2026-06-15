@@ -42,6 +42,25 @@
 	border-left: 4px solid #00a32a;
 }
 
+.owgr-notice {
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.owgr-notice--warning {
+	background: #fcf9e8;
+	border-left: 4px solid #dba617;
+}
+
+.owgr-notice--warning p {
+	margin: 0 0 8px;
+}
+
+.owgr-notice--warning p:last-child {
+	margin-bottom: 0;
+}
+
 #owgr-accounts-wrap,
 #owgr-locations-wrap {
 	margin: 1em 0;
