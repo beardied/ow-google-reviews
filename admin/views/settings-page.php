@@ -22,18 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google Cloud Console', 'ow-google-reviews' ); ?></a>.
 			</li>
 			<li>
-				<?php esc_html_e( 'Enable these APIs in the API Library:', 'ow-google-reviews' ); ?>
+				<?php esc_html_e( 'Enable these APIs:', 'ow-google-reviews' ); ?>
 				<ul>
-					<li><strong><?php esc_html_e( 'Google My Business API', 'ow-google-reviews' ); ?></strong> <?php esc_html_e( '(required — this is the v4.9 API that provides the reviews endpoint)', 'ow-google-reviews' ); ?></li>
-					<li><?php esc_html_e( 'My Business Account Management API', 'ow-google-reviews' ); ?></li>
-					<li><?php esc_html_e( 'My Business Business Information API', 'ow-google-reviews' ); ?></li>
+					<li><?php esc_html_e( 'Google My Business API', 'ow-google-reviews' ); ?></li>
+					<li><?php esc_html_e( 'Business Profile Management API', 'ow-google-reviews' ); ?></li>
+					<li><?php esc_html_e( 'Business Information API', 'ow-google-reviews' ); ?></li>
 				</ul>
-				<p class="description">
-					<?php esc_html_e( 'Note: Google has split Business Profile into several APIs. The reviews endpoint lives in the legacy "Google My Business API" (v4.9). If you cannot find it by name, search the API Library for', 'ow-google-reviews' ); ?>
-					<code>mybusiness.googleapis.com</code>
-					<?php esc_html_e( 'or enable it directly at', 'ow-google-reviews' ); ?>
-					<a href="https://console.cloud.google.com/apis/library/mybusiness.googleapis.com" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/apis/library/mybusiness.googleapis.com</a>.
-				</p>
 			</li>
 			<li>
 				<?php esc_html_e( 'Configure the OAuth consent screen as External. Add your own Google account email as a Test User. Add the scope:', 'ow-google-reviews' ); ?>
