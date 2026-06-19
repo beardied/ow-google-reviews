@@ -113,10 +113,6 @@ class OWGR_Blocks {
 	 * Enqueue public-facing block assets.
 	 */
 	public function enqueue_public_assets() {
-		if ( ! has_block( 'ow-google-reviews/recent-reviews' ) && ! has_block( 'ow-google-reviews/all-reviews' ) ) {
-			return;
-		}
-
 		$css_file = OWGR_PLUGIN_DIR . 'public/css/owgr-public.css';
 		$version  = file_exists( $css_file ) ? filemtime( $css_file ) : OWGR_VERSION;
 
@@ -278,7 +274,7 @@ class OWGR_Blocks {
 			'name'            => $business_name,
 			'aggregateRating' => array(
 				'@type'       => 'AggregateRating',
-				'ratingValue' => number_format( $average, 1 ),
+				'ratingValue' => number_format( $average, 1, '.', '' ),
 				'reviewCount' => absint( $count ),
 				'bestRating'  => '5',
 				'worstRating' => '1',
