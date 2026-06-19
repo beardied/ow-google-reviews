@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "ow-google-reviews/all-reviews",
 	"title": "All Google Reviews",
-	"category": "widgets",
+	"category": "orangewidow",
 	"icon": "star-filled",
 	"description": "Display all stored Google reviews.",
 	"keywords": ["google", "reviews", "testimonials"],

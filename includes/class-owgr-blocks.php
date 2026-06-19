@@ -42,6 +42,27 @@ class OWGR_Blocks {
 	private function __construct() {
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_public_assets' ) );
+		add_filter( 'block_categories_all', array( $this, 'register_block_category' ), 10, 2 );
+	}
+
+	/**
+	 * Register a custom block category for OrangeWidow blocks.
+	 *
+	 * @param array[]                 $block_categories Array of block categories.
+	 * @param WP_Block_Editor_Context $editor_context   The current block editor context.
+	 * @return array[]
+	 */
+	public function register_block_category( $block_categories, $editor_context ) {
+		return array_merge(
+			$block_categories,
+			array(
+				array(
+					'slug'  => 'orangewidow',
+					'title' => __( 'OrangeWidow', 'ow-google-reviews' ),
+					'icon'  => null,
+				),
+			)
+		);
 	}
 
 	/**

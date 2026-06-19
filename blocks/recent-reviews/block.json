@@ -2,7 +2,7 @@
 	"apiVersion": 3,
 	"name": "ow-google-reviews/recent-reviews",
 	"title": "Recent Google Reviews",
-	"category": "widgets",
+	"category": "orangewidow",
 	"icon": "star-filled",
 	"description": "Display a configurable number of recent Google reviews.",
 	"keywords": ["google", "reviews", "testimonials"],
