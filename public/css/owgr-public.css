@@ -126,3 +126,33 @@
 	font-size: 14px;
 	color: var(--owgr-meta-color);
 }
+
+.owgr-aggregate {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 16px;
+	margin-bottom: 24px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid var(--owgr-border-color);
+}
+
+.owgr-aggregate-rating {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--owgr-text-color);
+}
+
+.owgr-aggregate-stars {
+	display: flex;
+	gap: 2px;
+	font-size: 20px;
+	line-height: 1;
+}
+
+.owgr-aggregate-count {
+	font-size: 14px;
+	color: var(--owgr-meta-color);
+	width: 100%;
+}

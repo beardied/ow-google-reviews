@@ -69,6 +69,8 @@ class OWGR_Admin {
 		register_setting( 'owgr_settings_group', 'owgr_client_secret', 'sanitize_text_field' );
 		register_setting( 'owgr_settings_group', 'owgr_account_id', 'sanitize_text_field' );
 		register_setting( 'owgr_settings_group', 'owgr_location_id', 'sanitize_text_field' );
+		register_setting( 'owgr_settings_group', 'owgr_maps_url', 'esc_url_raw' );
+		register_setting( 'owgr_settings_group', 'owgr_test_mode', array( $this, 'sanitize_checkbox' ) );
 	}
 
 	/**
@@ -111,6 +113,16 @@ class OWGR_Admin {
 	}
 
 	/**
+	 * Sanitize a checkbox value.
+	 *
+	 * @param mixed $value Raw value.
+	 * @return string
+	 */
+	public function sanitize_checkbox( $value ) {
+		return ! empty( $value ) ? '1' : '0';
+	}
+
+	/**
 	 * Render the settings page.
 	 */
 	public function render_settings_page() {
@@ -128,6 +140,8 @@ class OWGR_Admin {
 		$auth_url       = $api->get_auth_url();
 		$review_count   = $db->count_reviews();
 		$last_sync      = $db->get_last_sync();
+		$maps_url       = get_option( 'owgr_maps_url', '' );
+		$test_mode      = get_option( 'owgr_test_mode', '0' );
 
 		include OWGR_PLUGIN_DIR . 'admin/views/settings-page.php';
 	}
@@ -218,6 +232,8 @@ class OWGR_Admin {
 		delete_option( 'owgr_connected' );
 		delete_option( 'owgr_last_sync_count' );
 		delete_option( 'owgr_last_sync_time' );
+		delete_option( 'owgr_maps_url' );
+		delete_option( 'owgr_test_mode' );
 
 		add_settings_error(
 			'owgr_messages',

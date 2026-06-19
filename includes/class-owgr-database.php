@@ -169,6 +169,19 @@ class OWGR_Database {
 	}
 
 	/**
+	 * Get the average star rating.
+	 *
+	 * @return float
+	 */
+	public function get_average_rating() {
+		global $wpdb;
+		$table = self::table_name();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+		$avg = $wpdb->get_var( "SELECT AVG(star_rating) FROM {$table}" );
+		return (float) $avg;
+	}
+
+	/**
 	 * Get the most recent sync timestamp.
 	 *
 	 * @return string|null

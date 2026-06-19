@@ -73,6 +73,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<th scope="row"><label for="owgr_client_secret"><?php esc_html_e( 'Client Secret', 'ow-google-reviews' ); ?></label></th>
 					<td><input type="password" id="owgr_client_secret" name="owgr_client_secret" value="<?php echo esc_attr( $client_secret ); ?>" class="regular-text"></td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="owgr_maps_url"><?php esc_html_e( 'Google Maps Profile URL', 'ow-google-reviews' ); ?></label></th>
+					<td>
+						<input type="url" id="owgr_maps_url" name="owgr_maps_url" value="<?php echo esc_url( $maps_url ); ?>" class="regular-text">
+						<p class="description"><?php esc_html_e( 'Paste the public Google Maps URL for this business. Used in the review schema sameAs property.', 'ow-google-reviews' ); ?></p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="owgr_test_mode"><?php esc_html_e( 'Test Mode', 'ow-google-reviews' ); ?></label></th>
+					<td>
+						<label for="owgr_test_mode">
+							<input type="checkbox" id="owgr_test_mode" name="owgr_test_mode" value="1" <?php checked( '1', $test_mode ); ?>>
+							<?php esc_html_e( 'Show placeholder Lorem Ipsum reviews instead of live reviews. Schema output is disabled in test mode.', 'ow-google-reviews' ); ?>
+						</label>
+					</td>
+				</tr>
 			</table>
 			<?php submit_button( __( 'Save Credentials', 'ow-google-reviews' ) ); ?>
 		</form>
