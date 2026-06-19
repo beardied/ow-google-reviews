@@ -210,11 +210,13 @@ class OWGR_Blocks {
 	/**
 	 * Render the aggregate rating summary as human-visible plain text.
 	 *
-	 * @param int   $count   Number of reviews.
-	 * @param float $average Average rating.
+	 * @param int    $count       Number of reviews.
+	 * @param float  $average     Average rating.
+	 * @param string $button_url  Optional URL for a text link below the count.
+	 * @param string $button_text Optional text for the link.
 	 * @return string
 	 */
-	private function render_aggregate_summary( $count, $average ) {
+	private function render_aggregate_summary( $count, $average, $button_url = '', $button_text = '' ) {
 		if ( $count < 1 ) {
 			return '';
 		}
@@ -240,6 +242,11 @@ class OWGR_Blocks {
 				);
 				?>
 			</span>
+			<?php if ( ! empty( $button_url ) ) : ?>
+				<a href="<?php echo esc_url( $button_url ); ?>" class="owgr-view-all-link">
+					<?php echo esc_html( $button_text ); ?>
+				</a>
+			<?php endif; ?>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -318,7 +325,7 @@ class OWGR_Blocks {
 			return '<p class="owgr-no-reviews">' . esc_html__( 'No reviews yet.', 'ow-google-reviews' ) . '</p>';
 		}
 
-		$summary_html   = $this->render_aggregate_summary( $aggregate['count'], $aggregate['average'] );
+		$summary_html   = $this->render_aggregate_summary( $aggregate['count'], $aggregate['average'], $show_button ? $button_url : '', $button_text );
 		$schema_html    = ! $test_mode ? $this->render_schema( $aggregate['count'], $aggregate['average'] ) : '';
 
 		ob_start();
@@ -329,14 +336,6 @@ class OWGR_Blocks {
 			<?php foreach ( $reviews as $review ) : ?>
 				<?php $this->render_review_card( $review ); ?>
 			<?php endforeach; ?>
-
-			<?php if ( $show_button && ! empty( $button_url ) ) : ?>
-				<div class="owgr-view-all">
-					<a href="<?php echo esc_url( $button_url ); ?>" class="owgr-button">
-						<?php echo esc_html( $button_text ); ?>
-					</a>
-				</div>
-			<?php endif; ?>
 		</div>
 		<?php
 		return ob_get_clean();
