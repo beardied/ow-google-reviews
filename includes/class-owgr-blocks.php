@@ -117,11 +117,14 @@ class OWGR_Blocks {
 			return;
 		}
 
+		$css_file = OWGR_PLUGIN_DIR . 'public/css/owgr-public.css';
+		$version  = file_exists( $css_file ) ? filemtime( $css_file ) : OWGR_VERSION;
+
 		wp_enqueue_style(
 			'owgr-public-css',
 			OWGR_PLUGIN_URL . 'public/css/owgr-public.css',
 			array(),
-			OWGR_VERSION
+			$version
 		);
 	}
 
